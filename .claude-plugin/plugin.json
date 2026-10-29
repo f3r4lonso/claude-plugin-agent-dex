@@ -2,9 +2,18 @@
   "name": "agent-dex",
   "version": "0.1.0-beta.1",
   "description": "Colecciona, crea y pon a trabajar agentes y skills desde una interfaz web local: Dex, Sala en vivo, chat con permisos, Bandeja, workflows con humano en el circuito y Glosario de GitHub.",
-  "author": { "name": "f3r4lonso" },
+  "author": {
+    "name": "f3r4lonso"
+  },
   "homepage": "https://github.com/f3r4lonso/claude-plugin-agent-dex",
   "repository": "https://github.com/f3r4lonso/claude-plugin-agent-dex",
   "license": "MIT",
-  "keywords": ["agents", "skills", "catalog", "workflows", "claude-code"]
+  "keywords": [
+    "agents",
+    "skills",
+    "catalog",
+    "workflows",
+    "claude-code"
+  ],
+  "icon": "./.claude-plugin/icon.png"
 }
