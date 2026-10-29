@@ -114,6 +114,7 @@ Más en [`CONTRIBUTING.md`](CONTRIBUTING.md). Registro de cambios: [`CHANGELOG.m
 | [`docs/roadmap.md`](docs/roadmap.md) | Hoja de ruta |
 | [`docs/adr/`](docs/adr) | Decisiones técnicas |
 | [`docs/dependencias.md`](docs/dependencias.md) | Licencias y revisión de dependencias |
+| [`docs/tienda-de-plugins.md`](docs/tienda-de-plugins.md) | Ficha y divulgación para la tienda de plugins |
 | [`docs/gym.md`](docs/gym.md), [`docs/prompts-imagen.md`](docs/prompts-imagen.md) | Diseño de funciones futuras |
 
 ## Licencia
