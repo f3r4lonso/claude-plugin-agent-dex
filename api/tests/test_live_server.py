@@ -32,21 +32,29 @@ def server(tmp_path):
         "AGENT_DEX_PROJECT_DIR": str(tmp_path),
         "PYTHONUNBUFFERED": "1",
     }
+    log_path = tmp_path / "server.log"
+    log = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in teardown
     proc = subprocess.Popen(
         [sys.executable, "-m", "agent_dex.cli", "serve", "--port", str(port)],
         env=env,
-        stdout=subprocess.PIPE,
+        stdout=log,
         stderr=subprocess.STDOUT,
-        text=True,
     )
     token = None
-    deadline = time.time() + 20
+    deadline = time.time() + 60
     while time.time() < deadline and token is None:
-        line = proc.stdout.readline()
-        if "#t=" in line:
-            token = line.strip().split("#t=")[1]
-    assert token, "server did not print its launch URL"
-    for _ in range(50):
+        text = log_path.read_text(encoding="utf-8", errors="replace")
+        if "#t=" in text:
+            token = text.split("#t=")[1].split()[0]
+        elif proc.poll() is not None:
+            break
+        else:
+            time.sleep(0.2)
+    if not token:
+        proc.kill()
+        pytest.fail(f"server did not print its launch URL; output:
+{log_path.read_text(errors='replace')}")
+    for _ in range(100):
         try:
             urllib.request.urlopen(f"http://127.0.0.1:{port}/api/health", timeout=1)
             break
@@ -54,7 +62,11 @@ def server(tmp_path):
             time.sleep(0.1)
     yield port, token
     proc.terminate()
-    proc.wait(timeout=10)
+    try:
+        proc.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+    log.close()
 
 
 def test_http_and_websocket_work_on_the_real_server(server):
