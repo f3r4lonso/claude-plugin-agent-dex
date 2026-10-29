@@ -1,5 +1,6 @@
 {
   "name": "agent-dex",
+  "description": "Marketplace de Agent Dex: coleccionador y orquestador de agentes para Claude Code.",
   "owner": { "name": "f3r4lonso" },
   "plugins": [
     {
