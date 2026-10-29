@@ -52,8 +52,8 @@ def server(tmp_path):
             time.sleep(0.2)
     if not token:
         proc.kill()
-        pytest.fail(f"server did not print its launch URL; output:
-{log_path.read_text(errors='replace')}")
+        output = log_path.read_text(errors="replace")
+        pytest.fail("server did not print its launch URL; output:\n" + output)
     for _ in range(100):
         try:
             urllib.request.urlopen(f"http://127.0.0.1:{port}/api/health", timeout=1)
