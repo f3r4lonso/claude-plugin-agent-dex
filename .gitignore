@@ -1,0 +1,9 @@
+node_modules/
+dist/
+test-results/
+.env
+.env.*
+*.log
+.credentials.json
+auth.json
+.claude/settings.local.json

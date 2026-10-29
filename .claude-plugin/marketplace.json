@@ -1,0 +1,11 @@
+{
+  "name": "agent-dex",
+  "owner": { "name": "f3r4lonso" },
+  "plugins": [
+    {
+      "name": "agent-dex",
+      "source": "./",
+      "description": "Coleccionador y gimnasio de agentes para Claude Code, exportable a Codex y Copilot."
+    }
+  ]
+}

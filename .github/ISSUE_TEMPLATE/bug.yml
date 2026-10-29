@@ -1,0 +1,25 @@
+name: Reportar un fallo
+description: Algo no funciona como debería.
+labels: [bug]
+body:
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué pasó y qué esperabas
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducirlo
+  - type: input
+    id: version
+    attributes:
+      label: Versión de Agent Dex (Ajustes → Tu entorno)
+  - type: input
+    id: sistema
+    attributes:
+      label: Sistema operativo y Python
+  - type: markdown
+    attributes:
+      value: "No pegues el código privado de la dirección (`#t=…`) ni claves."

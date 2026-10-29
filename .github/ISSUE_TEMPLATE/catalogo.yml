@@ -1,0 +1,38 @@
+name: Proponer entrada del Glosario
+description: Sugiere un agente o skill público para el catálogo.
+labels: [catalogo]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Repositorio
+      description: URL pública en GitHub
+    validations:
+      required: true
+  - type: input
+    id: ruta
+    attributes:
+      label: Ruta del agente o skill dentro del repositorio
+    validations:
+      required: true
+  - type: input
+    id: licencia
+    attributes:
+      label: Licencia
+    validations:
+      required: true
+  - type: textarea
+    id: motivo
+    attributes:
+      label: ¿Para qué sirve y por qué merece estar?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Comprobaciones
+      options:
+        - label: No contiene secretos ni comportamiento oculto (red, hooks, ejecución no explicada)
+          required: true
+        - label: La licencia permite su uso
+          required: true
