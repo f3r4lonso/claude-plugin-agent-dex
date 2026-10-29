@@ -19,7 +19,7 @@ npm run typecheck && npm test
 npm run build                            # compila dentro de api/src/agent_dex/static
 ```
 
-La interfaz compilada **se versiona** (`api/src/agent_dex/static`) para que `uvx --from git+…` funcione sin Node. Si cambias `web/`, ejecuta `npm run build` y sube también el resultado; la integración continua (`docs/ci/ci.yml`, a copiar en `.github/workflows/`) lo comprueba.
+La interfaz compilada **se versiona** (`api/src/agent_dex/static`) para que `uvx --from git+…` funcione sin Node. Si cambias `web/`, ejecuta `npm run build` y sube también el resultado; la integración continua lo comprueba.
 
 ## Reglas
 

@@ -1,5 +1,7 @@
 # Agent Dex
 
+[![CI](https://github.com/f3r4lonso/claude-plugin-agent-dex/actions/workflows/ci.yml/badge.svg)](https://github.com/f3r4lonso/claude-plugin-agent-dex/actions/workflows/ci.yml)
+
 **Coleccionador, entrenador y orquestador de agentes de IA para Claude Code.**
 Una interfaz web local donde ves a tus agentes y skills como una colección viva, hablas con ellos, los pones a trabajar solos o encadenados con pausas para que decidas tú, y capturas otros nuevos desde un glosario revisado de GitHub.
 
